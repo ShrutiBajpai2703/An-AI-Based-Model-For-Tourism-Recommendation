@@ -1,0 +1,21 @@
+INSTALL
+----------------
+PYTHON 3.11
+
+IMPLEMENTATION
+----------------
+1.EXTRACT ZIP FILE
+2.OPEN FILE DIRECTORY IN CMD (COMMAND PROMPT)
+3.AFTER OPENING CMD 
+c:/hp:/:Tourism Recommendation System:/webapp-(now type)
+
+pip install -r requirements.txt
+
+python manage.py createsuperuser
+
+python manage.py runserver
+
+
+4.NOW ITS RUNNING COPY AND PASTE URL IN BROWSER
+
+http://localhost:8000/
