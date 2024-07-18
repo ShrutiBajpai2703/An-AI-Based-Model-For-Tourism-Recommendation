@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white" id="mainNav" style=" background: lightblue url('https://i.pinimg.com/originals/85/61/87/856187ab52a7ffafc4b3092ab92ef43b.jpg'); background-size: cover; width: 100%;">
+    <style>
+        .rounded-logo {
+    height: 50px;
+    width: 60px;
+    border-radius: 50%; /* This will make the image round */
+}
+    </style>
+    
+    <div class="container" >
+        <a class="navbar-brand " href="/"  class="navbar-brand" href="/">
+            <img src="https://cdn.vectorstock.com/i/500p/14/69/travel-journey-logo-design-template-world-vector-4951469.jpg" alt="Logo" class="rounded-logo">
+        <b><u>TRS</u></b></a>
+        <button  class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            Menu
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                {% if request.user.is_authenticated %}
+
+                
+                
+                <li class="nav-item">
+                    <a class="nav-link " href="http://localhost:8000/state_detail/"><b>Explore &nbsp;&nbsp;</b></a>
+                </li>
+                
+                
+                {% if user.is_authenticated  %}
+
+                <li class="nav-item">
+                    <a class="nav-link " href="http://localhost:8000/recommend_place/"><b>Recommend By Place &nbsp;&nbsp;</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="http://localhost:8000/recommend_place_mood/"><b>Recommend By Query &nbsp;&nbsp;</b></a>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:8000/add_place/"><b>Plan My Holiday &nbsp;&nbsp;</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="http://localhost:8000/save_review/"><b>Review &nbsp;&nbsp;</b></a>
+                    </li>
+                {% endif %}
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/accounts/logout/"><b>Logout &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></a>
+                </li>
+                <li class="nav-item" >
+                    <a href="/accounts/profile/">
+                        <img src="{{request.user.user_profile.image.url_60x60}}" style="height:40px; "
+                             alt="{{request.user.fullname}}" class="avatar rounded-circle">
+                        <span class="header-username">{{request.user.get_full_name}}&nbsp;&nbsp;</span>
+                    </a>
+                </li>
+                {% else %}
+
+                <li class="nav-item">
+                    <a class="nav-link " href="/accounts/login/" style="font-size: 20px;"><b>Login &nbsp;&nbsp;|&nbsp;</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/accounts/signup/" style="font-size: 20px;"><b>Sign-up</b></a>
+                </li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
+</nav>
