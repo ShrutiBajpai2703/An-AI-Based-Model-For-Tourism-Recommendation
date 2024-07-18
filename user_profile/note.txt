@@ -1,0 +1,17 @@
+add 5 more in the following format place, longitude, latitude, temperature, place type, details, url
+
+
+datavalue = {
+    'Andhra Pradesh': [
+        {'id':1,'place': 'Charminar','long':17.361570,'lat':78.474663 ,'temp':29,'type': 'Historical','details':'Charminar - It is a historical monument and mosque located in the heart of Hyderabad. Built in 1591 by the fifth ruler of the Qutb Shahi dynasty, Mohammed Quli Qutb Shah, it is a popular tourist attraction and one of the most recognized landmarks of Hyderabad.' ,'url':'https://www.wonderwardrobes.com/wp-content/uploads/2015/06/Charminar-898x1024.jpg'},
+    ],
+    'Arunachal Pradesh': [
+        {'id':1,'place': 'Tawang Monastery','long':27.585531,'lat': 91.857216 , 'temp':21, 'type': 'Religious','details':'Tawang Monastery: It is a famous Buddhist monastery situated in Tawang district of Arunachal Pradesh. It is also known as the Galden Namgyal Lhatse Monastery and is one of the largest monasteries in India. The monastery was built in the 17th century by Mera Lama Lodre Gyatso. The monastery has a beautiful architecture and is an important center of Buddhist learning.' ,'url':'https://mynortheast.files.wordpress.com/2009/05/85.jpg'},
+       
+    ],
+    'Assam': [
+        {'id':1,'place': 'Kaziranga National Park','long':26.577543,'lat':93.171127 , 'temp':24 , 'type': 'Wildlife','details':'Kaziranga National Park: This park is famous for its one-horned rhinoceros, tigers, elephants, and other wildlife. It is also home to numerous bird species. Visitors can go on jeep and elephant safaris to explore the park.' ,'url':'https://newslivetv.com/wp-content/uploads/2020/10/EkWMMyXU8AUl3yc.jpg'},
+       
+    ],
+
+}

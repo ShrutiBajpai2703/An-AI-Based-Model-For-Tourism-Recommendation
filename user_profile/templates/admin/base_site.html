@@ -1,0 +1,17 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('mysite') }}</a></h1>
+<!-- <h1 id="site-name"><a href="{% url 'admin:index' %}">Mysite</a></h1> -->
+
+{% endblock %}
+
+
+{% block nav-global %}
+  <div class="nav-global-extensions">
+    <a href="http://localhost:8000/add_place/" class="button" style="margin-right: 10px;">Add Place</a>
+  </div>
+  {{ block.super }}
+{% endblock %}

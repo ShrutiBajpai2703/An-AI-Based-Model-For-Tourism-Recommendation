@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ state_name }} Details</title>
+    <style>
+      body {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+    background-image: url("https://wallpapers.com/downloads/high/travel-4k-japan-fuji-8tuep3c86h4lngec.webp?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.map-container {
+    margin-top: 40px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+
+input, select {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 0.5;
+    width: 10%;
+}
+
+button[type="submit"] {
+    padding: 12px 20px;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0052a3;
+}
+
+/* Media Query for smaller devices */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    input, select {
+        font-size: 14px;
+    }
+}
+.button {
+    display: inline-block;
+    padding: 8px 16px; /* Adjusted padding for smaller size */
+    background-color: #ff5722; /* Changed background color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px; /* Slightly reduced border-radius */
+    transition: background-color 0.3s ease;
+    margin-right: 10px; /* Add some spacing between buttons */
+}
+
+.button:hover {
+    background-color: #f44336; /* Darker shade on hover */
+}
+
+
+
+    </style>
+</head>
+<body>
+    {% if state_data %}
+    <h1>{{ state_name }}</h1>
+    <a class="button" href="http://localhost:8000/">HOME</a>
+    <a class="button" href="http://localhost:8000/state_detail/">OTHER PLACE</a>
+    
+    <hr>
+    {% for place_data in state_data %}
+    <h2> {{ place_data.place }}</h2>
+    <p>Location Type: {{ place_data.type }}</p>
+    <p>Tempeature: {{ place_data.temp }}</p>
+    <img src="{{ place_data.url }}" alt="{{ place_data.place }}" style="width: 250px;">
+    <p>{{ place_data.details }}</p>
+    <p>Date: {{ start_date_str }} - {{ end_date_str }}</p>
+    <p>Total no. of Days Planned: {{num_days}}</p>
+    <p>Current Location {{current_l}} : {{con}}</p>
+    <!-- <p><p>Place ID: {{ place_data.id }}</p></p> -->
+    <hr>
+    {% endfor %}
+    
+    <div class="map-container">
+        {{ map_html|safe }}
+    </div>
+    
+    
+{% elif error_msg %}
+<h1>Error</h1>
+<p>{{ error_msg }}</p>
+
+{% else %}
+<hr>
+
+<h1>Enter a State Name</h1>
+<a class="button" href="http://localhost:8000/">HOME</a>
+<br>
+<br>
+<form method="post">
+    {% csrf_token %}
+    <label for="state_name" style="font-weight: bold;">Location:</label>
+    <select id="state_name" name="state_name">
+        <option value="">Select a state</option>
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="West Bengal">West Bengal</option>
+        <!-- Rest of the options -->
+    </select><br>
+    <br>
+    
+    <label for="start_date" style="font-weight: bold;">Start Date:</label>
+    <input type="date" id="start_date" name="start_date"><br>
+    <br>
+    <label for="end_date" style="font-weight: bold;">End Date:</label>
+    <input type="date" id="end_date" name="end_date"><br>
+    <br>
+    <label for="num_people" style="font-weight: bold;">Number of People:</label>
+    <input type="number" id="num_people" name="num_people"><br>
+    <br>
+    <label for="companions" style="font-weight: bold;">Companions:</label>
+    <select id="companions" name="companions">
+        <option value="solo">Solo</option>
+        <option value="family">Family</option>
+        <option value="friends">Friends</option>
+        <option value="couple">Couple</option>
+    </select><br>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+<div class="map-container">
+    {{ map_html }}
+</div>
+{% endif %}
+</body>
+</html>
