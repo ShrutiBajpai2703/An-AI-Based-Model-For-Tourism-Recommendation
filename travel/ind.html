@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rule-based Chatbot Template</title>
+    <link rel="stylesheet" type="text/css" href="home.css "/>
+  </head>
+  <body>
+
+    <div class="chatbot-container" id="chatbot-container" style="background-color: rgb(217, 217, 237);">
+      <div class="chat-window">
+          <div class="chat-header">
+            <h3>Decision Tree Chatbot</h3>
+            <button id="close-button">X</button>
+          </div>
+
+          <div class="chat-body">
+            <p>What is your question?</p>
+            <div class="options">
+              <button id="option1">Option 1</button>
+              <button id="option2">Option 2</button>
+              <button id="option3">Option 3</button>
+            </div>
+
+            <div class="options" id="option1-suboptions" style="display:none">
+              <button>Option 1-1</button>
+              <button>Option 1-2</button>
+            </div>
+
+            <div class="options" id="option2-suboptions" style="display:none">
+              <button>Option 2-1</button>
+              <button>Option 2-2</button>
+            </div>
+
+            <div class="options" id="option3-suboptions" style="display:none">
+              <button>Option 3-1</button>
+              <button>Option 3-2</button>
+            </div>
+          </div>
+      </div>
+    </div>
+    <!-- <script src="script.js"></script> -->
+    <script src="ind.js"></script>
+  </body>
+</html>
