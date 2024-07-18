@@ -1,0 +1,100 @@
+def create_dataset(request):
+    # Dictionary to hold the data
+    dataset = {}
+
+    # Indian states and their capital cities
+    dataset['states'] = {
+        'Andhra Pradesh': 'Amaravati',
+        'Arunachal Pradesh': 'Itanagar',
+        'Assam': 'Dispur',
+        'Bihar': 'Patna',
+        'Chhattisgarh': 'Raipur',
+        'Goa': 'Panaji',
+        'Gujarat': 'Gandhinagar',
+        'Haryana': 'Chandigarh',
+        'Himachal Pradesh': 'Shimla',
+        'Jharkhand': 'Ranchi',
+        'Karnataka': 'Bengaluru',
+        'Kerala': 'Thiruvananthapuram',
+        'Madhya Pradesh': 'Bhopal',
+        'Maharashtra': 'Mumbai',
+        'Manipur': 'Imphal',
+        'Meghalaya': 'Shillong',
+        'Mizoram': 'Aizawl',
+        'Nagaland': 'Kohima',
+        'Odisha': 'Bhubaneswar',
+        'Punjab': 'Chandigarh',
+        'Rajasthan': 'Jaipur',
+        'Sikkim': 'Gangtok',
+        'Tamil Nadu': 'Chennai',
+        'Telangana': 'Hyderabad',
+        'Tripura': 'Agartala',
+        'Uttar Pradesh': 'Lucknow',
+        'Uttarakhand': 'Dehradun',
+        'West Bengal': 'Kolkata'
+    }
+
+    # Most common temperature throughout the year in each state
+    dataset['temperatures'] = {
+        'Andhra Pradesh': '28°C',
+        'Arunachal Pradesh': '22°C',
+        'Assam': '26°C',
+        'Bihar': '25°C',
+        'Chhattisgarh': '26°C',
+        'Goa': '27°C',
+        'Gujarat': '30°C',
+        'Haryana': '28°C',
+        'Himachal Pradesh': '15°C',
+        'Jharkhand': '26°C',
+        'Karnataka': '25°C',
+        'Kerala': '28°C',
+        'Madhya Pradesh': '25°C',
+        'Maharashtra': '27°C',
+        'Manipur': '24°C',
+        'Meghalaya': '22°C',
+        'Mizoram': '22°C',
+        'Nagaland': '25°C',
+        'Odisha': '29°C',
+        'Punjab': '25°C',
+        'Rajasthan': '31°C',
+        'Sikkim': '15°C',
+        'Tamil Nadu': '28°C',
+        'Telangana': '32°C',
+        'Tripura': '25°C',
+        'Uttar Pradesh': '30°C',
+        'Uttarakhand': '17°C',
+        'West Bengal': '27°C'
+    }
+
+    # Public attraction places in each state
+
+    dataset['attractions'] = {
+    'Andhra Pradesh': ['Charminar', 'Tirumala Venkateswara Temple', 'Golconda Fort'],
+    'Arunachal Pradesh': ['Tawang Monastery', 'Bomdila Monastery', 'Sela Pass'],
+    'Assam': ['Kaziranga National Park', 'Manas National Park', 'Kamakhya Temple'],
+    'Bihar': ['Mahabodhi Temple', 'Patna Museum', 'Nalanda University'],
+    'Chhattisgarh': ['Chitrakoot Falls', 'Tirathgarh Waterfall', 'Bastar Palace'],
+    'Goa': ['Baga Beach', 'Calangute Beach', 'Basilica of Bom Jesus'],
+    'Gujarat': ['Statue of Unity', 'Sabarmati Ashram', 'Rani ki vav'],
+    'Haryana': ['Sultanpur National Park', 'Sheetla Mata Mandir', 'Surajkund Mela'],
+    'Himachal Pradesh': ['Rohtang Pass', 'The Ridge', 'Hadimba Devi Temple'],
+    'Jharkhand': ['Hundru Falls', 'Betla National Park', 'Jagannath Temple'],
+    'Karnataka': ['Mysore Palace', 'Hampi Ruins', 'Gokarna Beach'],
+    'Kerala': ['Backwaters of Kerala', 'Athirappilly Falls', 'Hill Palace'],
+    'Madhya Pradesh': ['Khajuraho Temples', 'Sanchi Stupa', 'Bandhavgarh National Park'],
+    'Maharashtra': ['Gateway of India', 'Ajanta and Ellora Caves', 'Siddhivinayak Temple'],
+    'Manipur': ['Loktak Lake', 'Imphal War Cemetery', 'Manipur State Museum'],
+    'Meghalaya': ['Living Root Bridges', 'Nohkalikai Falls', 'Elephant Falls'],
+    'Mizoram': ['Phawngpui National Park', 'Murlen National Park', 'Durtlang Hills'],
+    'Nagaland': ['Dzukou Valley', 'Naga Heritage Village', 'Kohima War Cemetery'],
+    'Odisha': ['Konark Sun Temple', 'Jagannath Temple', 'Chilika Lake'],
+    'Punjab': ['Golden Temple', 'Wagah Border', 'Jallianwala Bagh'],
+    'Rajasthan': ['Hawa Mahal', 'City Palace Jaipur', 'Amber Fort'],
+    'Sikkim': ['Nathula Pass', 'Tsomgo Lake', 'Rumtek Monastery'],
+    'Tamil Nadu': ['Meenakshi Temple', 'Marina Beach', 'Mahabalipuram'],
+    'Telangana': ['Ramoji Film City', 'Warangal Fort', 'Salar Jung Museum'],
+    'Tripura': ['Neermahal Palace', 'Unakoti Hill', 'Kamalasagar Kali Temple'],
+    'Uttar Pradesh': ['Taj Mahal', 'Varanasi Ghats', 'Fatehpur Sikri'],
+    'Uttarakhand': ['Valley of Flowers National Park', 'Kedarnath Temple', 'Rishikesh'],
+    'West Bengal': ['Victoria Memorial', 'Sundarbans', 'Darjeeling']
+    }
